@@ -1,141 +1,154 @@
-%   LaTeX Template für das Historische Institut der Universität Greifswald
-%   erstellt von Jürgen Deinlein
-%   Februar 2021
-%
-%
+%   LaTeX Template für den Fachbereich Kunstgeschichte am CDFI
+%   Stand Februar 2025
+%   Erstellt von Jürgen Deinlein unter Verwendung von DeepSeek R1
+
+%---------------------------------------------------------------------------
+%  Dokumentenklasse und verwendete Pakete
 %---------------------------------------------------------------------------
 
+\documentclass[12pt,a4paper]{article} % Schriftgröße kann hier geändert werden
+\usepackage[utf8]{inputenc} % UTF-8 encoding
+\usepackage[top=20mm, left=30mm, bottom=20mm, right=30mm]{geometry} % Seitenränder mit 2 cm oben und unten, 3 cm für die Ränder
+\usepackage{times} % Times New Roman font
+\usepackage[ngerman]{babel} % Neue Deutsche Rechtschreibung
+\usepackage[T1]{fontenc} % Font encoding
+\usepackage[style=footnote-dw, isbn=false, url=false, backend=biber]{biblatex} % Bibliography
+\usepackage{csquotes} % For proper quotation marks
+\MakeOuterQuote{"} % Use proper quotation marks
+\usepackage{graphicx} % For including images
+\usepackage{caption} % For custom captions
+\usepackage{subcaption} % For subfigures
+\usepackage[nottoc,numbib]{tocbibind} % Add bibliography to table of contents
+\usepackage{fancyhdr} % Custom headers and footers
+\usepackage{setspace} % Custom line spacing
+\usepackage{ragged2e} % For justifying footnotes
 
-%   Dokumentenklasse und verwendete Pakete
+%---------------------------------------------------------------------------
+%   Pfade und Kommandos
+%---------------------------------------------------------------------------
 
-\documentclass[11pt,a4paper]{article}% Schriftgröße kann hier angepasst werden
-\usepackage[utf8]{inputenc}
-\usepackage[margin=30mm]{geometry}
-% \renewcommand{\baselinestretch}{1.5}
-\linespread{1.5}
-\usepackage[german]{babel}
-\usepackage[notes, isbn=false, doi=false, url=false, backend=biber]{biblatex-chicago}
-\usepackage{csquotes}
-\usepackage{graphicx}
+\graphicspath{ {./images/} } % Pfad zu den Bildern
 
-\graphicspath{ {./bilder/} }
+\newcommand{\dotdot}{ \lbrack\dots\rbrack~} % Shortcut für [...] in Zitaten
 
-\newcommand{\dotdot}{ \lbrack\dots\rbrack~}% Neues Kommando für [...] in Zitaten
+\addbibresource{./Vorlage.bib} % Pfad zur Bibliografie Datei !!! WICHTIG !!!!
 
-\addbibresource{Vorlage.bib}% Pfad zur BibTex Datei, wenn im gleichen Ordner einfach den Dateinamen
+%---------------------------------------------------------------------------
+%   Zitate
+%---------------------------------------------------------------------------
 
+% Dieses Environment sorgt dafür, dass die Zeilenabstände bei Blockzitaten stimmen
+\newenvironment{blockzitat}
+{\singlespacing\quote}
+{\endquote}
+
+%---------------------------------------------------------------------------
+%   Blocksatz für die Fußnoten, schönere Anordnung
+%---------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+	\setlength{\parindent}{0pt} % Remove paragraph indentation
+	\setlength{\hangindent}{1.5em} % Add hanging indentation for the footnote text
+	\justifying % Justify the footnote text
+	\makebox[0pt][r]{\@thefnmark.\hspace{0.5em}}% Place the footnote number in the left margin
+	#1% Footnote text
+}
+\makeatother
+
+%---------------------------------------------------------------------------
+%   Dokumenteneinstellung
 %---------------------------------------------------------------------------
 
 \begin{document}
-\pagenumbering{gobble} % Keine Seitennummern für den Anfang
-
-%---------------------------------------------------------------------------
-\title{\LARGE{Der Titel eurer Arbeit} \\ \Large\itshape{Ein kreativer Untertitel}}
-
-\author{{Jürgen Deinlein} \\ {Universität Greifswald}}
-
-\date{\today}
-
-\maketitle
-\vspace*{\fill}
-\begin{flushleft}
-    Caspar-David-Friedrich-Institut \\
-    Bachelor of Arts Kunstgeschichte (X. Fachsemester), \emph{Name eures Moduls} \\
-    Seminar: Der Name eures Seminars, am besten wie er im HIS steht \\
-    Dozentin: Prof. Mustermann\\
-    Matrikelnummer: 123456 \\
-    E-Mail:euremail@uni-greifswald.de
-    \end{flushleft}
-\newpage
-%---------------------------------------------------------------------------
-\pagenumbering{roman} % Kleine römische Zahlen für das Inhaltsverzeichnis - gut wenn mehrere Seiten lang
-\tableofcontents
-
-\newpage
-\pagenumbering{arabic} % Arabische Seitenzahlen für den Fließtext
-%---------------------------------------------------------------------------
-\section{Einführung und Forschungsstand}
-
-\subsection{Einführung}
-
-Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas \emph{Böses} getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern\footcite[][]{AugustinusRegel} sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren. Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren.\footcite[siehe hierzu][]{Portmann1990}.
-
-Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je\footcite[33]{North2015} anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen?
-
-\subsection{Forschungsstand}
-
-Deutsches Ipsum Dolor deserunt dissentias Hörspiele et. Tollit argumentum Gesundheit an. Saepe lobortis bitte per ne, nam Weihnachten probatus pertinax, impetus Rubin auf Schienen aliquando no sea. Guten Tag scripserit no vis, Sprechen Sie deutsch meis suscipit ea. Lukas Podolski ea offendit eleifend, Aufschnitt blandit voluptatibus sed, Schwarzwälder Kirschtorte eius consul sanctus Vorsprung durch Technik Cu quas legimus Handtasche vim sit amet, consectetur Köln elit, sed do Köln tempor incididunt ut genau et dolore magna Currywurst Ut enim ad Lebkuchen veniam, quis nostrud Joachim Löw ullamco laboris nisi Apfelschorle aliquip ex ea Guten Tag consequat. Duis aute Landjaeger dolor in reprehenderit Mertesacker voluptate velit esse Rotwurst dolore eu fugiat Lebkuchen pariatur. Excepteur sint Faust cupidatat non proident, Flughafen in culpa qui Zeitgeist deserunt mollit anim Schnaps est laborum id latine Fußballweltmeisterschaft complectitur pri, mea Turnbeutel denique nominavi id. Grimms Märchen expetenda nam an, Doppelscheren-Hubtischwagen ei reque euismod Bier Odio principes iracundia Aufenthaltsgenehmigung pri. Ut vel Döner mandamus, quas natum Zauberer ei ius, diam Köln honestatis eum no quo Handtasche posidonium at, adhuc Apfelschorle sadipscing per at, Schweinsteiger mei ullum gloriatur. Mettwurst inermis recteque accommodare Die Toten Hosen Id nec assum Milchreis te melius erroribus Anwendungsprogrammierschnittstelle Nec ut amet zu spät iriure, prodesset gloriatur Reise ut. Dicunt virtute Schadenfreude per no. At Handtasche scaevola eum. An Wurst malorum efficiendi ius
-
-Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen?
-
-\subsection{Methodik}
-
-Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten (vgl. Abbildung \ref{polaroid}), als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren. Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben\footcite[][2]{Dutschke1994}. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren. Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern\footcite[][78]{Barrera1995} sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren.Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten\footcite[Eine Notiz vor der Fußnote][34]{Bumazhnov_2009}, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen (vgl. Abbildung \ref{americans}) bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab.
-
-Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht? Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen Mühen und Schmerz ihm große Freude bereiten können. Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender körperlicher Betätigung, außer um Vorteile daraus zu ziehen? Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft, eine Freude zu genießen, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resultierende Freude nach sich zieht?Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder wünscht, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen Umständen, in denen 
-
-\section{Euer Forschungsthema}
-
-\subsection{Erste These}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
-
-Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada.
-
-Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit. Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Nunc nulla. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Donec venenatis vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. 
-
-\subsection{Zweite These}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
-\begin{quote}
-    [...] Daraus folgt, daß der komplette Abschlußparagraph aus Lukians Demonax (Kap. 67) fast wortwörtlich in die Vita Antonii übertragen wurde, wenn auch aufgeteilt auf den Prolog und den Epilog. Nun sollte man beachten, daß wir es hier nicht mit beiläufigen Bemerkungen, sondern mit programmatischen Aussagen zu tun haben, die kurze Einblicke in das literarische Vorgehen der Autoren erlauben und dadurch die bewußte Nachahmung des Athanasius noch unterstreichen.\footcite[168]{Overwien2006} 
-\end{quote}
-Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada.
-
-\section{Zusammenfassung}
-
-Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit. Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Nunc nulla. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Donec venenatis vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed magna 
-
-%---------------------------------------------------------------------------
-\newpage
-\pagenumbering{Roman}
-\printbibliography[keyword={source},title={Quellen}]
-\printbibliography[notkeyword={source},title={Literaturverzeichnis}]
-
-%---------------------------------------------------------------------------
-\newpage
-\section*{Abbildungsverzeichniss}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{evans.jpg}
-    \caption{Eure Bildunterschrift mit Maßen, Prozess und Provenienz}
-    \label{evans}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{theamericans.jpg}
-    \caption{Eure Bildunterschrift mit Maßen, Prozess und Provenienz}
-    \label{americans}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{polaroid.jpg}
-    \caption{Eure Bildunterschrift mit Maßen, Prozess und Provenienz}
-    \label{polaroid}
-\end{figure}
-
-%---------------------------------------------------------------------------
-\clearpage
-\section*{Eigenständigskeitserklärung} % Das * bedeutet, dass die Sektion nicht im Verzeichniss auftaucht
-Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
-\newline
-\newline
-Alle sinngemäß und wörtlich übernommenen Textstellen aus fremder Literatur wurden kenntlich gemacht.
-\newline
-\newline
-Greifswald, den \today.
-
+	\pagenumbering{gobble} % Keine Seitenzahl für das Deckblatt
+		
+	%---------------------------------------------------------------------------
+	%   Deckblatt
+	%---------------------------------------------------------------------------
+	
+	\title{\LARGE{Titel der Arbeit} \\ \Large\itshape{Der Untertitel der Arbeit}}
+	\author{{Mein Name} \\ {Universität Greifswald}}
+	\date{Eingereicht am [Datum]}
+	
+	\maketitle
+	\vspace*{\fill}
+	\begin{flushleft}
+		Art der Arbeit (Hausarbeit, Bachelorsarbeit, etc.)\\
+		Fächer, Semester \\
+		Caspar-David-Friedrich-Institut \\
+		Seminar: Seminar Titel \\
+		Betreuer: Name \\
+		Modul: Modul Name \\
+		Matrikelnummer: 123456 \\
+		Email: your.email@university.edu
+	\end{flushleft}
+	\newpage
+	
+	%---------------------------------------------------------------------------
+	%   Inhaltsverzeichnis
+	%---------------------------------------------------------------------------
+	
+	% Fußzeileneinstellungen, macht vor allem, dass die Numerierung am rechten Rand steht
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyfoot[R]{\thepage} 
+	\renewcommand{\headrulewidth}{0pt} 
+	
+	\pagenumbering{roman} % Kleine römische Ziffern für das Inhaltsverzeichnis
+	\tableofcontents
+	\newpage
+	
+	%---------------------------------------------------------------------------
+	%   Haupttext
+	%---------------------------------------------------------------------------
+	
+	\pagenumbering{arabic} % Arabische Ziffern für den Hauptteil
+	\onehalfspacing % 1,5-facher Zeilenabstand
+	
+	\section{Einleitung}
+	% Hier kommt eine Einleitung hin.
+	
+	Das ist ein toller Text mit einer Fußnote zu Demonstationszwecken.\footnote{Ich bin eine Fußnote und soll zeigen, wie das später mal aussehen wird.}
+	
+	\section{Sektion 1}
+	% Erste Sektion.
+	
+	Here is an example of a quotation with 1.0 line spacing:
+	
+	\begin{blockzitat}
+		Ich bin ein Blockzitat und bin ein bisschen länger, weshalb man mir eine extra Formatierung zugeteilt hat. So sehe ich dann im Fließtext aus, ich sollte eingerückt und mit 1-fachen Zeilenabstand sein. Falls ich das nicht bin, ist irgendwo etwas schief gegangen.
+	\end{blockzitat}
+	
+	\section{Noch eine Sektion}
+	% Inhalt dieser Sektion.
+	
+	%---------------------------------------------------------------------------
+	%   Literaturverzeichnis
+	%---------------------------------------------------------------------------
+	
+	\newpage
+	\printbibliography[heading=bibintoc,keyword={source},title={Quellenverzeichnis}] % Wenn es Quellen gibt, die nicht in das Literaturverzeichnis sollen, dann kommen sie hier hin.
+	\printbibliography[heading=bibintoc,notkeyword={source},title={Literaturverzeichnis}] % Das ist das eigentliche Literaturverzeichnis
+	\listoffigures % Abbildunsverzeichnis
+	
+	%---------------------------------------------------------------------------
+	%   Lizensen (Optional)
+	%---------------------------------------------------------------------------
+	
+	\section*{Lizeninformationen}
+	CC BY-SA 3.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/3.0/} \\
+	CC BY-SA 4.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/4.0/}
+	
+	%---------------------------------------------------------------------------
+	%   Anhang
+	%---------------------------------------------------------------------------
+	
+	\newpage
+	\section*{Anhang}
+	% Hier kommen alle Bilder etc. rein.
+	\section*{Erklärung}
+	Hiermit erkläre ich, dass ich die vorgelegte Arbeit eigenständig verfasst und keine anderen als die im Literaturverzeichnis angegebenen Quellen, Darstellungen und Hilfsmittel benutzt habe. Dies trifft insbesondere auch auf Quellen aus dem Internet zu. Alle Textstellen, die wortwörtlich oder sinngemäß anderen Werken oder sonstigen Quellen entnommen sind, habe ich in jedem einzelnen Fall unter genauer Angabe der jeweiligen Quelle, auch der Sekundärliteratur, als Entlehnung gekennzeichnet. Die Nutzung von chatgpt und/oder anderen KI-Anwendungen ist kenntlich gemacht. \\ \\
+	Ich erkläre hiermit weiterhin, dass die vorgelegte Arbeit zuvor weder von mir noch -- soweit mir bekannt ist -- von einer anderen Person an dieser oder einer anderen Hochschule eingereicht wurde. \\ \\
+	Darüber hinaus ist mir bekannt, dass die Unrichtigkeit dieser Erklärung eine Benotung der Arbeit mit der Note "nicht ausreichend" zur Folge hat und dass Verletzungen des Urheber- rechts strafrechtlich verfolgt werden können.
 \end{document}

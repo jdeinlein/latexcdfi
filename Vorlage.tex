@@ -33,6 +33,10 @@
 
 \addbibresource{./Vorlage.bib} % Pfad zur Bibliografie Datei !!! WICHTIG !!!!
 
+% Sorgt dafür, dass die Titel kursiv geschrieben sind.
+\DeclareFieldFormat{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibemph{#1}}
+
 %---------------------------------------------------------------------------
 %   Zitate
 %---------------------------------------------------------------------------
@@ -68,7 +72,7 @@
 	%---------------------------------------------------------------------------
 	
 	\title{\LARGE{Titel der Arbeit} \\ \Large\itshape{Der Untertitel der Arbeit}}
-	\author{{Mein Name} \\ {Universität Greifswald}}
+	\author{{Mein Name} \\ {Universität Greifswald} \\ {Semester Jahr}}
 	\date{Eingereicht am [Datum]}
 	
 	\maketitle

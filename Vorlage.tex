@@ -71,50 +71,50 @@
 %---------------------------------------------------------------------------
 
 \begin{document}
-	\pagenumbering{gobble} % Keine Seitenzahl für das Deckblatt
+\pagenumbering{gobble} % Keine Seitenzahl für das Deckblatt
 		
-	%---------------------------------------------------------------------------
-	%   Deckblatt
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Deckblatt
+%---------------------------------------------------------------------------
 	
-	\title{\LARGE{Titel der Arbeit} \\ \Large\itshape{Der Untertitel der Arbeit}}
-	\author{{Mein Name} \\ {Universität Greifswald} \\ {Semester Jahr}}
-	\date{Eingereicht am [Datum]}
+\title{\LARGE{Titel der Arbeit} \\ \Large\itshape{Der Untertitel der Arbeit}}
+\author{{Mein Name} \\ {Universität Greifswald} \\ {Semester Jahr}}
+\date{Eingereicht am [Datum]}
 	
-	\maketitle
-	\vspace*{\fill}
-	\begin{flushleft}
-		Art der Arbeit (Hausarbeit, Bachelorsarbeit, etc.)\\
-		Fächer, Semester \\
-		Caspar-David-Friedrich-Institut \\
-		Seminar: Seminar Titel \\
-		Betreuer: Name \\
-		Modul: Modul Name \\
-		Matrikelnummer: 123456 \\
-		Email: your.email@university.edu
-	\end{flushleft}
-	\newpage
+\maketitle
+\vspace*{\fill}
+\begin{flushleft}
+	Art der Arbeit (Hausarbeit, Bachelorsarbeit, etc.)\\
+	Fächer, Semester \\
+	Caspar-David-Friedrich-Institut \\
+	Seminar: Seminar Titel \\
+	Betreuer: Name \\
+	Modul: Modul Name \\
+	Matrikelnummer: 123456 \\
+	Email: your.email@university.edu
+\end{flushleft}
+\newpage
 	
-	%---------------------------------------------------------------------------
-	%   Inhaltsverzeichnis
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Inhaltsverzeichnis
+%---------------------------------------------------------------------------
 	
-	% Fußzeileneinstellungen, macht vor allem, dass die Numerierung am rechten Rand steht
-	\pagestyle{fancy}
-	\fancyhf{}
-	\fancyfoot[R]{\thepage} 
-	\renewcommand{\headrulewidth}{0pt} 
+% Fußzeileneinstellungen, macht vor allem, dass die Numerierung am rechten Rand steht
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage} 
+\renewcommand{\headrulewidth}{0pt} 
 	
-	\pagenumbering{roman} % Kleine römische Ziffern für das Inhaltsverzeichnis
-	\tableofcontents
-	\newpage
+\pagenumbering{roman} % Kleine römische Ziffern für das Inhaltsverzeichnis
+\tableofcontents
+\newpage
 	
-	%---------------------------------------------------------------------------
-	%   Haupttext
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Haupttext
+%---------------------------------------------------------------------------
 	
-	\pagenumbering{arabic} % Arabische Ziffern für den Hauptteil
-	\onehalfspacing % 1,5-facher Zeilenabstand
+\pagenumbering{arabic} % Arabische Ziffern für den Hauptteil
+\onehalfspacing % 1,5-facher Zeilenabstand
 	
 	\section{Einleitung}
 	% Hier kommt eine Einleitung hin.
@@ -133,44 +133,44 @@
 	\section{Noch eine Sektion}
 	% Inhalt dieser Sektion.
 	
-	%---------------------------------------------------------------------------
-	%   Literaturverzeichnis
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Literaturverzeichnis
+%---------------------------------------------------------------------------
 	
-	\newpage
-	\printbibliography[heading=bibintoc,keyword={source},title={Quellenverzeichnis}] % Wenn es Quellen gibt, die nicht in das Literaturverzeichnis sollen, dann kommen sie hier hin.
-	\printbibliography[heading=bibintoc,notkeyword={source},title={Literaturverzeichnis}] % Das ist das eigentliche Literaturverzeichnis
-	\listoffigures % Abbildunsverzeichnis
-	\pagenumbering{Roman}
+\newpage
+\printbibliography[heading=bibintoc,keyword={source},title={Quellenverzeichnis}] % Wenn es Quellen gibt, die nicht in das Literaturverzeichnis sollen, dann kommen sie hier hin.
+\printbibliography[heading=bibintoc,notkeyword={source},title={Literaturverzeichnis}] % Das ist das eigentliche Literaturverzeichnis
+\listoffigures % Abbildunsverzeichnis
+\pagenumbering{Roman}
 	
-	%---------------------------------------------------------------------------
-	%   Lizensen (Optional)
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Lizensen (Optional)
+%---------------------------------------------------------------------------
 	
-	\section*{Lizeninformationen}
-	CC BY-SA 3.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/3.0/} \\
-	CC BY-SA 4.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/4.0/}
+\section*{Lizeninformationen}
+CC BY-SA 3.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/3.0/} \\
+CC BY-SA 4.0, einzusehen unter \url{https://creativecommons.org/licenses/by-sa/4.0/}
 	
-	%---------------------------------------------------------------------------
-	%   Anhang
-	%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%   Anhang
+%---------------------------------------------------------------------------
 	
-	\newpage
+\newpage
 
-	\section*{Anhang}
-	% Hier kommen alle Bilder etc. rein.
+\section*{Anhang}
+% Hier kommen alle Bilder etc. rein.
 	
-	\newpage
-	\pagenumbering{gobble} % Keine Seitenzahl für das Endblatt
-	\section*{Erklärung}
+\newpage
+\pagenumbering{gobble} % Keine Seitenzahl für das Endblatt
+\section*{Erklärung}
 	Hiermit erkläre ich, dass ich die vorgelegte Arbeit eigenständig verfasst und keine anderen als die im Literaturverzeichnis angegebenen Quellen, Darstellungen und Hilfsmittel benutzt habe. Dies trifft insbesondere auch auf Quellen aus dem Internet zu. Alle Textstellen, die wortwörtlich oder sinngemäß anderen Werken oder sonstigen Quellen entnommen sind, habe ich in jedem einzelnen Fall unter genauer Angabe der jeweiligen Quelle, auch der Sekundärliteratur, als Entlehnung gekennzeichnet. Die Nutzung von chatgpt und/oder anderen KI-Anwendungen ist kenntlich gemacht. \\ \\
 	Ich erkläre hiermit weiterhin, dass die vorgelegte Arbeit zuvor weder von mir noch -- soweit mir bekannt ist -- von einer anderen Person an dieser oder einer anderen Hochschule eingereicht wurde. \\ \\
 	Darüber hinaus ist mir bekannt, dass die Unrichtigkeit dieser Erklärung eine Benotung der Arbeit mit der Note "nicht ausreichend" zur Folge hat und dass Verletzungen des Urheber- rechts strafrechtlich verfolgt werden können.
 	
-	\vspace{25mm}
-	\begin{tabular}{@{}p{3in}p{2in}p{2in}@{}}
-		\hrulefill \\
-		Ort, Datum und Unterschrift \\
-	\end{tabular}
+\vspace{25mm}
+\begin{tabular}{@{}p{3in}p{2in}p{2in}@{}}
+	\hrulefill \\
+	Ort, Datum und Unterschrift \\
+\end{tabular}
 	
 \end{document}
